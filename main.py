@@ -1,78 +1,60 @@
-  GNU nano 8.6                                                        main.py
+                                        #   Expense Tracker Project
 
 
-                         #✅✅✅✅mini expense treacker project✅✅✅✅
-
-#creat a console  based expense tracker program in python that aloww the user allow user to daily
-#expense and viwe summaries like total spending . use only consept learn till chepter -6
-#(conditionals, dictionaries and basic, input output loops)
-
-# project details / deacription
-# your are required to built a simple personal fineance managment tool. the program should aloww
-# user to
-# 1- add an expense with details categary description and amount
-# 2- view all receorded expanse in clean format
-# 3- calculate total spending so for
-# 4- exit thevprogram gracefully when the user choice
-print ("=============================================================================")
-print ("==🔷🔷️🔷️   💓    💓   💛💛💛💛   🔷️🔷️🔷️🔷️   🔶️      🔶️  🌳🌳🌳🌳  🔷️🔷️🔷️🔷️ ==")
-print ("==🔷️        💓 💓     💛    💛   🔷️         🔶️ 🔶️   🔶️  🌳        🔷️       ==")
-print ("==🔷️🔷️🔷️      💓       💛💛💛💛   🔷️🔷️🔷️🔷️   🔶️  🔶️  🔶️  🌳🌳🌳🌳  🔷️🔷️🔷️🔷️==")
-print ("==🔷️         💓 💓     💛         🔷️         🔶️   🔶️ 🔶️        🌳  🔷️      ==")
-print ("==🔷️🔷️🔷️   💓    💓    💛         🔷️🔷️🔷️🔷️   🔶️    🔶️🔶️  🌳🌳🌳🌳  🔷️🔷️🔷️🔷️==")
-print ("==================////////////============///////////=======================")
-
+expense = []
 import time
-expenselist = []       #list of eexpenes
-i = 1
-while i<=3:
-        print ("🔱🔱🌹🌼🙏WELCOME🙏🌼🌹🔱🔱TO EXPENSE TRACKE\n🌹🌹🌹🌹 बचत का हे मोल मीलक्र नीभाए ये रोल🌹🌹🌹🌹🌹")
-        i+=1
-        time.sleep(0.1)
+anything_numner= int(input("Enter enything number--->"))
+for _ in range(anything_numner,0,-1):
+    print("🧡"*_+ "----->🍀WELCOME TO EXPENSE TRACKER🍀")
+    time.sleep(0.2)
 
 while True:
-    print ("💠💠🏵🏵🏵💠💠MENU💠💠🏵🏵🏵💠💠")
-    print ("1. Add expense")
-    print ("2. View all expenses")
-    print ("3. view total amount")
-    print ("4. Quit")
+   
+    print("1.<==============🍀MENU🍀==============>")
+    print("2.<=ADD EXPENSE=>")
+    print("3.<=VIEW ALL EXPENSE=>")
+    print("4.<=VIEW TOTAL EXPENSE=>")
+    print("5.<=EXIT=>")
 
-    choice = int(input("Enter your choice: "))       # Add  user input for choice
-
+    choice= int(input("Eenter your choice---->"))
+                                                                  # Add expense
     if choice == 1:
-        date = input("Enter the spending date: ")
-        category = input("Type of category spending food, travel, cloth, domestic, books, gadgets: ")
-        description = input("Enter other detail: ")
-        amount = float(input("Enter the amount: "))
+        date= input("Enter the spending date----->")
+        category= input ("Tyape spending\nfood,treval,mekeup,books--->")
+        amount = float(input("Enter amount--->"))
+        description= input("Enter the other detail\n--->")
+        amount= float(input ("Enter the amount\nAMOUNT--->"))
 
-        expense = {
-            "date": date,
-            "category": category,
-            "description": description,
-            "amount": amount,
-        }
-        expenselist.append(expense)  # Append the dictionary to the list
-        print("DON✅✅ BRO,🌹expense is added✅ successfully🌹")
+        expense_dic= {
+            "date" : date,
+            "category" : category,
+            "description" : description,
+            "amount" : amount,
+              }
+        expense.append(expense_dic)
+        print("\nDOEN Expense is added succesfully")
 
-    elif choice == 2:
-        if len(expenselist) == 0:
-            print ("No❌ expenses❌ added")
+
+    elif choice == 2:                                            #view all expense
+        if len(expense)== 0:
+            print ("not expense added plese add your expense")
         else:
-            print ("===🌹 Your all expenses🌹 ===")
-            count = 1
-            for eachspending in expenselist:
-                print (f"Spending number {count} -> {eachspending['date']}, {eachspending['category']}, {eachspending['amount']}, {eachspending>
+            print ("total spending---->")  
+            count= 1
+            for eachspending in expense:
+                print(f"eachspending number{count}--->,{eachspending['date']},{eachspending['category']},{eachspending['description']},{eachspending['amount']}")
                 count += 1
-
-    elif choice == 3:   #view total spending
-        total = 0
-        for eachspending in expenselist:
+    
+    elif choice == 3:                                            #view total spending
+        total= 0
+        for eachspending in expense:
             total += eachspending['amount']
-        print ("Total spending =", total)
-
-    elif choice == 4:
-        print ("🌹🌹🌹Thank you for🌼🌼🌼 using my system🌹🌹🌹")
-        break                        # Correctly indented break inside the while loop
-
+            print("total all spending---->",total)
+    
+    elif choice == 4:                                             # Exit
+        print ("thanyou for using  my system")
+        break
     else:
-        print ("Invalid choice, try")
+        print("invalid choice")                    
+
+
