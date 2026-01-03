@@ -1,7 +1,7 @@
 # EXPENSE-TRACKER-
 Expense Tracker – Python Console Application A simple and interactive Python-based Expense Tracker that helps users record, manage, and analyze their daily expenses directly from the terminal. This project is beginner-friendly and focuses on using core Python concepts like lists, dictionaries, loops, and user input handling.
 
-# 💸 Expense Tracker (Python Console App)
+# 💸 Expense Tracker (Personal Finance App - Expense Tracker)
 
 A beginner-friendly Python console application to track daily expenses.  
 Users can add expenses, view all records, and calculate total spending using a simple menu-driven interface.
